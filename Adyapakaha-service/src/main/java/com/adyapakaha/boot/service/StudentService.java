@@ -85,11 +85,7 @@ public class StudentService {
 	
 	public void updateStudentsByExceededEndDate(StringBuffer ids) {
 		String sql = "UPDATE Student SET paid = false WHERE  id IN "+ ids;
-		System.out.println("spl===="+ sql);
 		jdbcTemplate.update(sql); 
-		
-		System.out.println("ds====="+ ids);
-//		studentDao.updateStudentsByExceededEndDate(ids);
 	}
 
 }
