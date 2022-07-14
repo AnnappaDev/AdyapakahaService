@@ -26,6 +26,10 @@ public class Student {
 	
 	private String parentPhno;
 	
+	private String parentOccupation;
+	
+	private String address;
+	
 	@OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinColumn(name = "standardId")
 	private Standard std;
@@ -149,6 +153,22 @@ public class Student {
 
 	public void setStartDate(String startDate) {
 		this.startDate = startDate;
+	}
+
+	public String getParentOccupation() {
+		return parentOccupation;
+	}
+
+	public void setParentOccupation(String parentOccupation) {
+		this.parentOccupation = parentOccupation;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
 	
