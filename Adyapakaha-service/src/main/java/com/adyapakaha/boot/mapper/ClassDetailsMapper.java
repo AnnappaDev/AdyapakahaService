@@ -13,6 +13,8 @@ public class ClassDetailsMapper implements RowMapper {
 		ClassDetails cd = new ClassDetails();
 		cd.setStandard(rs.getInt("standard_id"));
 		cd.setStrenght(rs.getInt("stdk_count"));
+		cd.setTitle(rs.getString("title"));
+		cd.setImage(rs.getString("image"));
 		return cd;
 	}
 

@@ -55,7 +55,8 @@ public class StudentService {
 	}
 
 	public List<ClassDetails> getClasswiseDetails() {
-		String sql = "SELECT standard_id," + " COUNT(standard_id) AS stdk_count" + " FROM student "
+		String sql = "SELECT standard_id, title,image," + " COUNT(standard_id) AS stdk_count" + " FROM student "
+				+ " RIGHT JOIN standard ON standard.id = student.standard_id"
 				+ " WHERE standard_id IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)" + " GROUP BY standard_id";
 
 		return jdbcTemplate.query(sql, new ClassDetailsMapper());
@@ -71,7 +72,8 @@ public class StudentService {
 	}
 
 	public List<ClassDetails> getStudentByNonPaidByClassWise() {
-		String sql = "SELECT standard_id," + " COUNT(standard_id) AS stdk_count" + " FROM student "
+		String sql = "SELECT standard_id, title,image," + " COUNT(standard_id) AS stdk_count" + " FROM student "
+				+ " RIGHT JOIN standard ON standard.id = student.standard_id"
 				+ " WHERE standard_id IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) AND paid = " + 0
 				+ " GROUP BY standard_id";
 
