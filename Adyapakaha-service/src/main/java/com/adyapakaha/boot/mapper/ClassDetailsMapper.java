@@ -12,7 +12,7 @@ public class ClassDetailsMapper implements RowMapper {
 	public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 		ClassDetails cd = new ClassDetails();
 		cd.setStandard(rs.getInt("standard_id"));
-		cd.setStrenght(rs.getInt("stdk_count"));
+		cd.setStrength(rs.getInt("stdk_count"));
 		cd.setTitle(rs.getString("title"));
 		cd.setImage(rs.getString("image"));
 		return cd;

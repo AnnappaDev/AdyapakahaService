@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.EntityManager;
 
@@ -75,7 +76,7 @@ public class StudentService {
 		String sql = "SELECT standard_id, title,image," + " COUNT(standard_id) AS stdk_count" + " FROM student "
 				+ " RIGHT JOIN standard ON standard.id = student.standard_id"
 				+ " WHERE standard_id IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) AND paid = " + 0
-				+ " GROUP BY standard_id";
+				+ " GROUP BY standard_id ORDER by standard.id asc";
 
 		return jdbcTemplate.query(sql, new ClassDetailsMapper());
 	}
@@ -88,6 +89,16 @@ public class StudentService {
 	public void updateStudentsByExceededEndDate(StringBuffer ids) {
 		String sql = "UPDATE Student SET paid = false WHERE  id IN "+ ids;
 		jdbcTemplate.update(sql); 
+	}
+
+	public Optional<Student> getStudentById(long id) {
+		// TODO Auto-generated method stub
+		return studentDao.findById(id);
+	}
+
+	public List<Student> getStudentByName(String searchKeyword, long id) {
+		// TODO Auto-generated method stub
+		return  studentDao.getStudentsBysearchKeyword(searchKeyword, id);
 	}
 
 }

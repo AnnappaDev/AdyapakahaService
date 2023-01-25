@@ -3,7 +3,7 @@ package com.adyapakaha.boot.model;
 public class ClassDetails {
 
 	private long standard;
-	private long strenght;
+	private long strength;
 	private String title;
 	private String image;
 	
@@ -16,12 +16,13 @@ public class ClassDetails {
 		this.standard = standard;
 	}
 
-	public long getStrenght() {
-		return strenght;
+	
+	public long getStrength() {
+		return strength;
 	}
 
-	public void setStrenght(long strenght) {
-		this.strenght = strenght;
+	public void setStrength(long strength) {
+		this.strength = strength;
 	}
 
 	public String getTitle() {

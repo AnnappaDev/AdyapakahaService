@@ -24,7 +24,6 @@ public class UserController {
 	
 	@PostMapping
 	public User createNewUser(@RequestBody User user) {
-		System.out.println("controller---");
 		return userService.createNewUser(user);
 	}
 	
@@ -33,9 +32,13 @@ public class UserController {
 		return userService.getAllUsers();
 	}
 	
+	@GetMapping({"/{name}"})
+	public User getUserByName(@PathVariable String name) {
+		return userService.getUserByName(name);
+	}
+	
 	@PutMapping({"/{id}"})
 	public User createUpdateUser(@RequestBody User user, @PathVariable long id) {
-		System.out.println("controller---");
 		return userService.updateUser(id, user);
 	}
 	
