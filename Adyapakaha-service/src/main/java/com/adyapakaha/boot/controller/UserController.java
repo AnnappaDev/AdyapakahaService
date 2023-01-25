@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.adyapakaha.boot.model.User;
 import com.adyapakaha.boot.service.UserService;
 
-@RestController
+@RestController  
 @RequestMapping(value="/user")
 public class UserController {
 	
